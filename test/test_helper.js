@@ -5,8 +5,8 @@ before((done)=>{
     mongoose.connect('mongodb://localhost/users_test', { useNewUrlParser: true });
     mongoose.connection
         .once('open', ()=> {
-            done();
             console.log('Connection established');
+            done();
         })
         .on('error',(error)=> console.warn('Error', error));
     
